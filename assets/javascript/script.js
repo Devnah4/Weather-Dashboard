@@ -1,4 +1,5 @@
 // Global Variables
+var cityBox = document.querySelector('#city-info');
 
 // Code to search for a city
 function cityEl() {
@@ -13,13 +14,37 @@ function cityEl() {
     })
     .then(function (data) {
         console.log(data);
-        namedCity = data.name;
+        var nameCity = data.name;
+        var temp = data.main.temp;
+        var wind = data.wind.speed;
+        var humidity = data.main.humidity;
         
+        for (var i = 0; i < data.length; i++);
+        var displayName = document.createElement('h2');
+        var displayTemp = document.createElement('p');
+        var displayWind = document.createElement('p');
+        var displayHumidity = document.createElement('p');
+        // var displayUv = document.createElement('p');
+
+        displayName.textContent = nameCity;
+        displayTemp.textContent = 'Temperature: ' + temp;
+        displayWind.textContent = 'Wind Speed: ' + wind;
+        displayHumidity.textContent = 'Humidity: ' + humidity
+
+        cityBox.appendChild(displayName);
+        cityBox.appendChild(displayTemp);
+        cityBox.appendChild(displayWind);
+        cityBox.appendChild(displayHumidity);
+        // cityBox.appendChild(displayUv);
+        fiveDayForecast();
     })
  };
 
 
-// Code to display info
+// Code for 5 Day Forecast
+function fiveDayForecast() {
+    
+}
 
 
 // Code to display 5 Day Forecast and generate boxes
