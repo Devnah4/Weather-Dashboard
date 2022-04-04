@@ -10,7 +10,7 @@ var apiKey = '8e2f43d909354c0af3b25ae5408f8e8c';
 
 // Get lat and lon
 function loadOutput() {
-    var geoKey = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName.value}&appid=${apiKey}`;
+    var geoKey = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName.value}&appid=${apiKey}`;
     console.log(geoKey)
     fetch(geoKey)
     .then(function (response) {
